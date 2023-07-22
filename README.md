@@ -129,110 +129,240 @@ Verständnis und Forschung im Bereich des autonomen Fahrens durch die Anwendung 
 
 ## Aufbau und Verwendung des Projekts
 
-### Aufbau des Projekts
+Bevor nun die eigentliche Implementierung des Projekts beschrieben wird, soll zunächst der Aufbau des Projekts, sowie
+die Abhängigkeiten und die Verwendung des Projekts beschrieben werden.
 
-Dieses Projekt besitzt die folgende Datenstruktur:
+### Kopieren des Projekts
 
-```
-|- highway_dqn
-|  |- dqn
-|  |  |- stablebaseline3
-|  |  |  |- model_500.zip
-|  |  |  |- model_2000.zip
-|  |  |  |- model_5000.zip
-|  |  |  |- model_10000.zip
-|  |  |  |- model_20000.zip
-|  |  |- torch
-|  |  |- .gitkeep
-|- notebooks
-|  |- Highway_StableBaseline3.ipynb
-|  |- Highway_Torch.ipynb
-|- .gitignore
-|- environment.yml
-|- LICENSE
-|- README.md
-|- requirements.txt
-```
+Um das Projekt selber in einer beliebigen IDE zu öffnen, muss das Projekt zunächst geklont werden. Dazu muss folgende
+Befehl in einen Terminal eingegeben werden:
 
-### Verwendung des Projekts
-
-#### Aufsetzen der Voraussetzungen für die Verwendung des Projekts
-
-Um das Projekt zu verwenden, müssen folgende Schritte durchgeführt werden:
-
-1. Clonen Sie das Projekt (Github Repository) auf Ihren lokalen Rechner. Dazu können Sie folgenden Befehl verwenden:
-
-```bash
+```shell
 git clone https://github.com/DHBW-Artificial-Intelligence-9416513/Hand-on-Reinforced-Learning.git
 ```
+### Aufbau des Projekts
 
-2. Navigieren Sie in den Ordner des Projekts und setzen Sie eine virtuelle Umgebung auf. Dazu können Sie eine der
-   folgenden Möglichkeiten verwenden:
-    1. #### Conda
-        1. Verwenden von Conda Virtual Environments:
-         ```bash
-         conda create -n <Name der Enviroment> python=3.8
-         ```
-        2. Nach dem Erstellen der virtuellen Umgebung muss diese noch aktiviert werden. Dazu können Sie folgenden Befehl
-           verwenden:
-         ```bash
-         conda activate <Name der Enviroment>
-         ```
-        3. In Anschluss müssen noch die benötigten Pakete installiert werden. Dazu können Sie folgenden Befehl
-           verwenden:
-         ```bash
-         pip install -r requirements.txt
-         ```
-       **!!Hinweis!!:** Alternativ können Sie auch die Datei `environment.yml` verwenden, um die virtuelle Umgebung zu
-       erstellen. Dazu können Sie folgenden Befehl verwenden:
-         ```bash
-         conda env create -f environment.yml
-         ```
-    2. #### Virtualenv:
-         ```bash
-         python3 -m venv <Name der Enviroment>
-         ```
-       Nach dem Erstellen der virtuellen Umgebung muss diese noch aktiviert werden. Dazu können Sie folgenden Befehl
-       verwenden:
-         ```bash
-         source <Name der Enviroment>/bin/activate
-         ```
-       In Anschluss müssen noch die benötigten Pakete installiert werden. Dazu können Sie folgenden Befehl verwenden:
-         ```bash
-         pip install -r requirements.txt
-         ```
+Nach den erfolgreichen Klonen des Projekts sollte sich nun ein Ordner mit dem Namen **Hand-on-Reinforced-Learning** im aktuellen
+Verzeichnis des Terminals befinden. In diesem Ordner befindet sich jetzt das Projekt. Der Aufbau des Projekts ist wie
+folgt:
 
-    3. Nachdem die virtuelle Umgebung erfolgreich erstellt wurde, kann das Projekt verwendet werden.
+```text
+|- Hand-on-Reinforced-Learning
+|  |- highway_models
+|  |  |- dqn
+|  |  |  |- stable_baselines3
+|  |  |  |  |- v1
+|  |  |  |  |  |- model_500.zip
+|  |  |  |  |  |- model_2000.zip
+|  |  |  |  |  |- model_5000.zip
+|  |  |  |  |  |- model_10000.zip
+|  |  |  |  |  |- model_20000.zip
+|  |  |  |  |- v2
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_100.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_500.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_1000.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_2000.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_4000.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_8000.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_16000.zip
+|  |  |  |  |  |- model_DQN_MlpPolicy_v2_32000.zip
+|  |  |  |- torch
+|  |  |  |  |- .gitkeep
+|  |- logs
+|  |  |- stable_baselines3
+|  |  |  |- DQN
+|  |  |  |  |- DQN_1
+|  |  |  |  |  |- events.out.tfevents.1689840910.L-Toby-Game.20208.0
+|  |  |  |  |- DQN_2
+|  |  |  |  |  |- events.out.tfevents.1689841237.L-Toby-Game.20208.1
+|  |  |  |  |- DQN_3
+|  |  |  |  |  |- events.out.tfevents.1689842861.L-Toby-Game.20208.2
+|  |  |  |  |- DQN_4
+|  |  |  |  |  |- events.out.tfevents.1689843110.L-Toby-Game.20208.3
+|  |  |  |  |- DQN_5
+|  |  |  |  |  |- events.out.tfevents.1689843598.L-Toby-Game.20208.4
+|  |  |  |  |- DQN_6
+|  |  |  |  |  |- events.out.tfevents.1689844605.L-Toby-Game.20208.5
+|  |  |  |  |- DQN_7
+|  |  |  |  |  |- events.out.tfevents.1689846631.L-Toby-Game.20208.6
+|  |  |  |  |- DQN_8
+|  |  |  |  |  |- events.out.tfevents.1689850811.L-Toby-Game.20208.7
+|  |  |  |  |- DQN_9
+|  |  |  |  |  |- events.out.tfevents.1689864452.L-Toby-Game.6488.0
+|  |  |  |  |- DQN_10
+|  |  |  |  |  |- events.out.tfevents.1689880007.L-Toby-Game.6488.1
+|  |- notebooks
+|  |  |- Highway_StabkeBaseline3.ipynb
+|  |  |- Highway_StabkeBaseline3_v2.0.ipynb
+|  |- videos
+|  |  |- stable_baselines3
+|  |  |  |- DQN
+|  |  |  |  |- video_DQN_MlpPolicy_v2_100
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_500
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_1000
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_2000
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_4000
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_8000
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_16000
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- video_DQN_MlpPolicy_v2_32000
+|  |  |  |  |  |- rl-video-episode-0.mp4
+|  |  |  |  |  |- rl-video-episode-1.mp4
+|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |- .gitignore
+|  |- environment.yml
+|  |- LICENSE
+|  |- README.md
+|  |- requirements.txt
 
-       Um die einzelnen Jupyter Notebooks zu starten, können Sie folgenden Befehl verwenden:
-        ```bash
-        jupyter notebook
-        ```
-       Um die einzelnen Pythonskripte zu starten, können Sie folgenden Befehl verwenden:
-        ```bash
-        python <Name des Skripts>.py
-        ```
+```
+
+### Installation der Abhängigkeiten des Projekts
+
+Bevor man das Projekt ausführen kann, müssen zunächst die Abhängigkeiten des Projekts installiert werden. Dazu gibt es
+die folgenden Möglichkeiten: **[pip](https://pip.pypa.io/en/stable/)**, **[conda](https://docs.conda.io/en/latest/)**
+und **[venv](https://docs.python.org/3/library/venv.html)**.
+Alle drei Möglichkeiten werden im Folgenden beschrieben, setzen jedoch eine installierte Python-Version voraus (Dieses
+Projekt wurde mit Python 3.11.* entwickelt). Sollte noch keine passende Python-Version installiert sein, kann diese von
+der offiziellen **[Python-Website](https://www.python.org/downloads/)** heruntergeladen werden.
+
+**Beachte:** Es gibt neben den Abhängigkeiten des Projekts noch weitere Abhängigkeiten, welche durch das Operating
+System definiert werden. Bitte dazu entsprechend die Fehlermeldungen beachten.
+
+#### Installation mit pip
+
+Um die Abhängigkeiten mit pip zu installieren, muss folgender Befehl in ein Terminal eingegeben werden:
+
+```shell
+pip install -r requirements.txt
+```
+
+**Beachte:** Durch diese Methode werden die Pakete global installiert. Sollte dies nicht gewünscht sein, sollte eine der
+anderen Methoden verwendet werden.
+
+#### Installation mit conda
+
+Bevor man die einzelnen Abhängigkeiten installieren kann, muss zunächst conda installiert werden und aktiviert sein.
+Beachten Sie dabei bitte die offizielle Dokumentation von **[conda](https://docs.conda.io/en/latest/)**. Nachdem conda
+eingerichtet worden ist, bietet es sich an für dieses Projekt eine eigene Environment zu erstellen, um dort nur die
+benötigten Bibliotheken zu installieren. Führen Sie dazu die folgenden Schritte durch:
+
+```shell
+conda create --name <Name der Environment> python=3.11
+```
+
+Nach der erstellung der Environment, muss diese zunächst durch den nachfolgenden Schritt aktiviert werden.
+
+```shell
+conda activate <Name der Environment>
+```
+
+**Beachte:** Sollte die Environment nicht mehr benötigt werden, kann diese durch den folgenden Befehl wieder deaktiviert
+werden. Zudem kann es erforderlich sein, dass bei jeder neuen Sitzung die Environment erneut aktiviert werden muss.
+
+```shell
+conda deactivate
+```
+
+Nachdem die Environment aktiviert worden ist, können nun die Abhängigkeiten installiert werden. Dazu muss folgender
+Befehl in ein Terminal (mit aktivierter Environment) eingegeben werden:
+
+```shell
+conda install --file requirements.txt
+```
+
+#### Installation mit venv
+
+Um die Abhängigkeiten mit venv zu installieren, muss zunächst ebenfalls eine neue Environment durch den folgenden Befehl
+in einem Terminal erstellt werden:
+
+```shell
+python -m venv <Name der Environment>
+```
+
+Nachdem die Environment erstellt worden ist, muss diese zunächst durch den nachfolgenden Schritt aktiviert werden.
+
+```shell
+<Name der Environment>\Scripts\activate.bat
+```
+
+**Beachte:** Sollte die Environment nicht mehr benötigt werden, kann diese durch den folgenden Befehl wieder deaktiviert
+werden. Zudem kann es erforderlich sein, dass bei jeder neuen Sitzung die Environment erneut aktiviert werden muss.
+
+```shell
+deactivate
+```
+
+Nachdem die Environment aktiviert worden ist, können nun die Abhängigkeiten installiert werden. Dazu muss folgender
+Befehl in ein Terminal (mit aktivierter Environment) eingegeben werden:
+
+```shell
+pip install -r requirements.txt
+```
+
+Damit sind nun alle Abhängigkeiten installiert und das Projekt kann ausgeführt werden.
+
+### Ausführen des Projekts
+
+Um das Projekt auszuführen, muss zunächst ein Jupiter Notebook Server gestartet werden. Dazu muss folgender Befehl in
+ein Terminal, welches entweder eine aktive Python-Umgebung oder eine aktive conda-Umgebung besitzt, eingegeben werden:
+
+```shell
+jupyter notebook
+```
+
+Anschließend kann über den Browser auf die Notebooks zugegriffen werden. Dazu muss in der Adresszeile des Browsers
+folgender Link eingegeben werden:
+
+```text
+http://localhost:8888/tree
+```
+
+Nachdem der Link aufgerufen worden ist, sollte sich ein Fenster mit dem Inhalt des Notebooks öffnen. Nun kann das
+Notebook ausgeführt werden.
 
 Die folgenden Notebooks beinhalten den Code für die einzelnen Schritte des Projekts:
 
 - **[StableLine3 - DQN](notebooks/Highway_StableBaseline3.ipynb)**
+- **[StableLine3 - DQN Version 2 ](notebooks/Highway_Stableline3_v2.0.ipynb)**
 
 ---
 
 ## Ergebnisse des Projekts
 
-Zu Beginn des Projektes (0. Generation des Agenten), war er nur in der Lage, das Auto geradeaus fahren zu lassen.
+Zu Beginn des Projektes (100. Zeitschritte Training), war er nur in der Lage, das Auto geradeaus fahren zu lassen.
 Nachdem der Agent trainiert wurde, konnte er das Auto erfolgreich durch die Kurven steuern.
 Dies lässt sich in folgendem Video beobachten:
 
-[![Video](https://img.youtube.com/vi/9Q1QX6Z3Zq0/0.jpg)](https://www.youtube.com/watch?v=9Q1QX6Z3Zq0)
+![rl-video-episode-0.mp4](videos%2Fstable_baselines3%2FDQN%2Fvideo_DQN_MlpPolicy_v2_100%2Frl-video-episode-0.mp4)
 
 Zum Ende des Trainingszyklus und dem somit erreichten Ergebnis, konnte der Agent das Auto erfolgreich durch die Kurven
 steuern. Dies lässt sich in folgendem Video beobachten:
 
-[![Video](https://img.youtube.com/vi/9Q1QX6Z3Zq0/0.jpg)](https://www.youtube.com/watch?v=9Q1QX6Z3Zq0)
+![rl-video-episode-1.mp4](videos%2Fstable_baselines3%2FDQN%2Fvideo_DQN_MlpPolicy_v2_32000%2Frl-video-episode-1.mp4)
+![rl-video-episode-2.mp4](videos%2Fstable_baselines3%2FDQN%2Fvideo_DQN_MlpPolicy_v2_32000%2Frl-video-episode-2.mp4)
 
 Die letzte Generation erzielte die folgenden Ergebnisse:
+Im Durchschnitt konnte der Agent das Auto 20 Sekunden lang fahren lassen, bevor es zu einem Unfall kam. Dabei gelang es
+ihm in ca. 70% der Fällen anderen Auto-Agenten auszuweichen und gleichzeitig auf der rechten Außenspur zu bleiben.
 
 ---
 

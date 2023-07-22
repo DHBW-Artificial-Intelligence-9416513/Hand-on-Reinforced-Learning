@@ -195,6 +195,10 @@ folgt:
 |  |  |- Highway_StabkeBaseline3.ipynb
 |  |  |- Highway_StabkeBaseline3_v2.0.ipynb
 |  |- videos
+|  |  |- readme
+|  |  |  |- dqn_100.gif
+|  |  |  |- dqn_4000.gif
+|  |  |  |- dqn_32000.gif
 |  |  |- stable_baselines3
 |  |  |  |- DQN
 |  |  |  |  |- video_DQN_MlpPolicy_v2_100
@@ -348,21 +352,11 @@ Die folgenden Notebooks beinhalten den Code für die einzelnen Schritte des Proj
 
 ## Ergebnisse des Projekts
 
-Zu Beginn des Projektes (100. Zeitschritte Training), war er nur in der Lage, das Auto geradeaus fahren zu lassen.
-Nachdem der Agent trainiert wurde, konnte er das Auto erfolgreich durch die Kurven steuern.
-Dies lässt sich in folgendem Video beobachten:
+![dqn_100.gif](videos%2Freadme%2Fdqn_100.gif)
 
-![rl-video-episode-0.mp4](videos%2Fstable_baselines3%2FDQN%2Fvideo_DQN_MlpPolicy_v2_100%2Frl-video-episode-0.mp4)
+![dqn_4000.gif](videos%2Freadme%2Fdqn_4000.gif)
 
-Zum Ende des Trainingszyklus und dem somit erreichten Ergebnis, konnte der Agent das Auto erfolgreich durch die Kurven
-steuern. Dies lässt sich in folgendem Video beobachten:
-
-![rl-video-episode-1.mp4](videos%2Fstable_baselines3%2FDQN%2Fvideo_DQN_MlpPolicy_v2_32000%2Frl-video-episode-1.mp4)
-![rl-video-episode-2.mp4](videos%2Fstable_baselines3%2FDQN%2Fvideo_DQN_MlpPolicy_v2_32000%2Frl-video-episode-2.mp4)
-
-Die letzte Generation erzielte die folgenden Ergebnisse:
-Im Durchschnitt konnte der Agent das Auto 20 Sekunden lang fahren lassen, bevor es zu einem Unfall kam. Dabei gelang es
-ihm in ca. 70% der Fällen anderen Auto-Agenten auszuweichen und gleichzeitig auf der rechten Außenspur zu bleiben.
+![dqn_32000.gif](videos%2Freadme%2Fdqn_32000.gif)
 
 ---
 

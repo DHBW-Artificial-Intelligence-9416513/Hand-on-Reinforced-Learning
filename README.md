@@ -216,7 +216,6 @@ git clone https://github.com/DHBW-Artificial-Intelligence-9416513/Hand-on-Reinfo
 Die folgenden Notebooks beinhalten den Code für die einzelnen Schritte des Projekts:
 
 - **[StableLine3 - DQN](notebooks/Highway_StableBaseline3.ipynb)**
-- **[Torch (Eigenentwicklung)](notebooks/Highway_Torch.ipynb)**
 
 ---
 

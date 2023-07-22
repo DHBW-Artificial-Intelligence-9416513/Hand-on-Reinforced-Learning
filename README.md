@@ -140,9 +140,11 @@ Befehl in einen Terminal eingegeben werden:
 ```shell
 git clone https://github.com/DHBW-Artificial-Intelligence-9416513/Hand-on-Reinforced-Learning.git
 ```
+
 ### Aufbau des Projekts
 
-Nach den erfolgreichen Klonen des Projekts sollte sich nun ein Ordner mit dem Namen **Hand-on-Reinforced-Learning** im aktuellen
+Nach den erfolgreichen Klonen des Projekts sollte sich nun ein Ordner mit dem Namen **Hand-on-Reinforced-Learning** im
+aktuellen
 Verzeichnis des Terminals befinden. In diesem Ordner befindet sich jetzt das Projekt. Der Aufbau des Projekts ist wie
 folgt:
 
@@ -352,11 +354,42 @@ Die folgenden Notebooks beinhalten den Code für die einzelnen Schritte des Proj
 
 ## Ergebnisse des Projekts
 
+In diesem Abschnitt werden die Ergebnisse des Projekts präsentiert. Dazu werden zunächst die Ergebnisse des ersten 100
+Zeitschritte als Ausgangswert genommen. Anschließend werden die Ergebnisse der einzelnen Trainingsstufen präsentiert.
+Zum Schluss werden die Ergebnisse der einzelnen Trainingsstufen in Form von Videos präsentiert.
+
+### Ausgangswert
+
 ![dqn_100.gif](videos%2Freadme%2Fdqn_100.gif)
+
+Wie in dem ersten Video zu sehen ist, ist der Agent noch nicht in der Lage, sich sicher auf der Autobahn zu bewegen. Er
+hält in den 5 Sekunden Clip nur die eine Spur und hat dabei noch nicht verstanden, dass es noch zusätzliche
+Belohnungspunkte bekommt, wenn er auf die rechte Spur wechselt. Des Weiteren ist der Agent noch nicht in der Lage, sein
+Tempo zu ändern um im Falle, dass ein Fahrzeug vor ihm fährt, zu bremsen. Dieses Verhalten ist auf die zufällige Wahl
+der Aktionen zurückzuführen.
+
+Subjetiv betrachtet, ist der Agent noch nicht in der Lage, sich sicher auf der Autobahn zu bewegen.
+
+### Trainingsstufe 1 (4000 - Zeitschritte)
 
 ![dqn_4000.gif](videos%2Freadme%2Fdqn_4000.gif)
 
+Nach einiger Zeit des Trainings ist der Agent in der Lage, sich sicherer auf der Autobahn zu bewegen. Er wechselt die
+Spur und hält sich primär auf der rechten Spur auf um möglichst viele Punkte zu erhalten. Jedoch besteht in dieser
+Trainingsstufe noch Verbesserungsbedarf. Der Agent ist noch nicht in der Lage, sein Tempo zu ändern um im Falle, dass
+ein Fahrzeug vor ihm fährt, zu bremsen. Dieses Verhalten ist auf die zufällige Wahl der Aktionen zurückzuführen, da der
+Agent noch nicht in der Lage ist, die Situation zu erkennen und entsprechend zu handeln.
+
+### Trainingsstufe 2 (32000 - Zeitschritte)
+
+Das Training des Agenten wurde nach 32000 Zeitschritten abgebrochen, da der Agent in der Lage war, einer Vielzahl von
+Autos auf seinen Weg über die Autobahn auszuweichen.
 ![dqn_32000.gif](videos%2Freadme%2Fdqn_32000.gif)
+
+Zudem hat der Agent gelernt, sein Tempo zu ändern um im Falle, dass ein Fahrzeug vor ihm fährt, zu bremsen. Er würde in
+den Fall einen gewissen Abstand hinter den vorherigen Auto halten um so möglichst viele Punkte zu erhalten. Dieses
+Szenario ist in dem Video jedoch nicht zu sehen, da der Agent in diesem Fall zu spät bremst und somit nicht in der Lage
+ist rechtzeitig zu stehen.
 
 ---
 

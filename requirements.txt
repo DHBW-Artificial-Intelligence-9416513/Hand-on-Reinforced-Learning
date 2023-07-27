@@ -2,5 +2,5 @@ highway-env
 tensorboard
 tqdm
 gymnasium
-stable-baselines3
+stable-baselines3[extra]
 moviepy

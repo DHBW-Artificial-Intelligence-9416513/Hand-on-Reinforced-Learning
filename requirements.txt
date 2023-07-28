@@ -4,3 +4,5 @@ tqdm
 gymnasium
 stable-baselines3[extra]
 moviepy
+rich
+pyvirtualdisplay

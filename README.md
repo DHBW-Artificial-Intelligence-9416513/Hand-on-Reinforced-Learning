@@ -168,71 +168,77 @@ folgt:
 |  |  |  |  |  |- model_DQN_MlpPolicy_v2_8000.zip
 |  |  |  |  |  |- model_DQN_MlpPolicy_v2_16000.zip
 |  |  |  |  |  |- model_DQN_MlpPolicy_v2_32000.zip
+|  |  |  |  |- v3
+|  |  |  |  |  |- best_model.zip
+|  |  |  |  |  |- .dqn_model_3000_steps.zip
+|  |  |  |  |  |- .dqn_model_6000_steps.zip
+|  |  |  |  |  |- .dqn_model_9000_steps.zip
+|  |  |  |  |  |- .dqn_model_12000_steps.zip
+|  |  |  |  |  |- .dqn_model_15000_steps.zip
+|  |  |  |  |  |- .dqn_model_18000_steps.zip
+|  |  |  |  |  |- .dqn_model_21000_steps.zip
+|  |  |  |  |  |- .dqn_model_24000_steps.zip
+|  |  |  |  |  |- .dqn_model_27000_steps.zip
+|  |  |  |  |  |- .dqn_model_30000_steps.zip
 |  |  |  |- torch
 |  |  |  |  |- .gitkeep
+|  |  |- ppo
+|  |  |  |- stable_baselines3
+|  |  |  |  |- v1
+|  |  |  |  |  |- best_model.zip
+|  |  |  |  |  |- .ppo_model_3000_steps.zip
+|  |  |  |  |  |- .ppo_model_6000_steps.zip
+|  |  |  |  |  |- .ppo_model_9000_steps.zip
+|  |  |  |  |  |- .ppo_model_12000_steps.zip
+|  |  |  |  |  |- .ppo_model_15000_steps.zip
+|  |  |  |  |  |- .ppo_model_18000_steps.zip
+|  |  |  |  |  |- .ppo_model_21000_steps.zip
+|  |  |  |  |  |- .ppo_model_24000_steps.zip
+|  |  |  |  |  |- .ppo_model_27000_steps.zip
+|  |  |  |  |  |- .ppo_model_30000_steps.zip
+|  |- img
+|  |  |- dqn
+|  |  |  |- eval_mean_length.png
+|  |  |  |- eval_reward.png
+|  |  |  |- train_mean_length.png
+|  |  |  |- train_reward.png
+|  |  |- ppo
+|  |  |  |- eval_length.png
+|  |  |  |- eval_reward.png
+|  |  |  |- train_mean_length.png
+|  |  |  |- train_reward.png
 |  |- logs
 |  |  |- stable_baselines3
 |  |  |  |- DQN
 |  |  |  |  |- DQN_1
-|  |  |  |  |  |- events.out.tfevents.1689840910.L-Toby-Game.20208.0
+|  |  |  |  |  |- events.out.tfevents.1690498131.DESKTOP-GOIJTI0.3053.0
 |  |  |  |  |- DQN_2
-|  |  |  |  |  |- events.out.tfevents.1689841237.L-Toby-Game.20208.1
-|  |  |  |  |- DQN_3
-|  |  |  |  |  |- events.out.tfevents.1689842861.L-Toby-Game.20208.2
-|  |  |  |  |- DQN_4
-|  |  |  |  |  |- events.out.tfevents.1689843110.L-Toby-Game.20208.3
-|  |  |  |  |- DQN_5
-|  |  |  |  |  |- events.out.tfevents.1689843598.L-Toby-Game.20208.4
-|  |  |  |  |- DQN_6
-|  |  |  |  |  |- events.out.tfevents.1689844605.L-Toby-Game.20208.5
-|  |  |  |  |- DQN_7
-|  |  |  |  |  |- events.out.tfevents.1689846631.L-Toby-Game.20208.6
-|  |  |  |  |- DQN_8
-|  |  |  |  |  |- events.out.tfevents.1689850811.L-Toby-Game.20208.7
-|  |  |  |  |- DQN_9
-|  |  |  |  |  |- events.out.tfevents.1689864452.L-Toby-Game.6488.0
-|  |  |  |  |- DQN_10
-|  |  |  |  |  |- events.out.tfevents.1689880007.L-Toby-Game.6488.1
+|  |  |  |  |  |- events.out.tfevents.1690534342.DESKTOP-GOIJTI0.664.1
+|  |  |  |  |- .gitkeep
+|  |  |  |  |- evaluations.npz
+|  |  |  |  |- monitor.csv
+|  |  |  |- ppo
+|  |  |  |  |- PPO_1
+|  |  |  |  |  |- events.out.tfevents.1690523738.DESKTOP-GOIJTI0.664.0
+|  |  |  |  |- PPO_2
+|  |  |  |  |  |- events.out.tfevents.1690543213.DESKTOP-GOIJTI0.664.2
+|  |  |  |  |- .gitkeep
+|  |  |  |  |- evaluations.npz
+|  |  |  |  |- monitor.csv
 |  |- notebooks
-|  |  |- Highway_StabkeBaseline3.ipynb
-|  |  |- Highway_StabkeBaseline3_v2.0.ipynb
+|  |  |- Highway_StableBaseline3.ipynb
+|  |  |- Highway_StableBaselines3_v3.0_multi_agent.ipynb
+|  |  |- Highway_Stableline3_v2.0.ipynb
+|  |  |- Highway_Visualisation.ipynb
 |  |- videos
 |  |  |- readme
-|  |  |  |- dqn_100.gif
-|  |  |  |- dqn_4000.gif
-|  |  |  |- dqn_32000.gif
+|  |  |  |- .gitkeep
 |  |  |- stable_baselines3
-|  |  |  |- DQN
-|  |  |  |  |- video_DQN_MlpPolicy_v2_100
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_500
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_1000
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_2000
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_4000
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_8000
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_16000
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
-|  |  |  |  |- video_DQN_MlpPolicy_v2_32000
-|  |  |  |  |  |- rl-video-episode-0.mp4
-|  |  |  |  |  |- rl-video-episode-1.mp4
-|  |  |  |  |  |- rl-video-episode-2.mp4
+|  |  |  |  |- dqn.mp4
+|  |  |  |  |- dqn_multi.mp4
+|  |  |  |- ppo
+|  |  |  |  |- ppo.mp4
+|  |  |  |  |- ppo_multi.mp4
 |  |- .gitignore
 |  |- environment.yml
 |  |- LICENSE
@@ -349,48 +355,64 @@ Die folgenden Notebooks beinhalten den Code für die einzelnen Schritte des Proj
 
 - **[StableLine3 - DQN](notebooks/Highway_StableBaseline3.ipynb)**
 - **[StableLine3 - DQN Version 2 ](notebooks/Highway_Stableline3_v2.0.ipynb)**
+- **[StableLine3 - PPO](notebooks/Highway_StableBaselines3_v3.0_multi_agent.ipynb)**
 
 ---
 
 ## Ergebnisse des Projekts
 
-In diesem Abschnitt werden die Ergebnisse des Projekts präsentiert. Dazu werden zunächst die Ergebnisse des ersten 100
-Zeitschritte als Ausgangswert genommen. Anschließend werden die Ergebnisse der einzelnen Trainingsstufen präsentiert.
-Zum Schluss werden die Ergebnisse der einzelnen Trainingsstufen in Form von Videos präsentiert.
+In diesen Abschnitt werden nun die zentralen Erkenntnisse aus dem Projekt vorgestellt.
 
-### Ausgangswert
+Im Rahmen dieses Projekts wurden zwei unterschiedliche Agenten auf die Umgebung trainiert, PPO und DQN. Beide Agenten
+stammen aus der Bibliotheke Stable-Baselines3. Die Ergebnisse der beiden Agenten werden im Folgenden vorgestellt.
+Bevor einige Aussagen zu den einzelnen Agenten getroffen werden, werden zunächst einige allgemeine Aussagen getroffen.
+Es ist festgestellt worden, dass von den beiden Agenten, der PPO am besten abgeschnitten hat, wenn man sich sowohl die
+Average Reward Werte pro Evaluation anschaut, als auch an den Punkt, wie lange der Agent sich in der Umgebung halten
+kann. Jedoch stellt auch dieser Agent keine zufriedenstellenden Ergebnisse dar. Der Agent ist in der Lage sich in der
+für einige Sekunden zu halten jedoch crashed auch dieser immer noch, sodass weiteres Training oder gar ein anderer
+Ansatz notwendig sein könnte.
 
-![dqn_100.gif](videos%2Freadme%2Fdqn_100.gif)
+### DQN
 
-Wie in dem ersten Video zu sehen ist, ist der Agent noch nicht in der Lage, sich sicher auf der Autobahn zu bewegen. Er
-hält in den 5 Sekunden Clip nur die eine Spur und hat dabei noch nicht verstanden, dass es noch zusätzliche
-Belohnungspunkte bekommt, wenn er auf die rechte Spur wechselt. Des Weiteren ist der Agent noch nicht in der Lage, sein
-Tempo zu ändern um im Falle, dass ein Fahrzeug vor ihm fährt, zu bremsen. Dieses Verhalten ist auf die zufällige Wahl
-der Aktionen zurückzuführen.
+In den nachfolgenden Diagrammen werden die Ergebnisse des DQN Agenten dargestellt.
+Dabei werden immer zwei identische
+DQN-Agenten miteinander verglichen.
+Beide wurden auf derselben Vektorisiserten Umgebung trainiert und weißen dieselben Hyperparameter auf.
 
-Subjetiv betrachtet, ist der Agent noch nicht in der Lage, sich sicher auf der Autobahn zu bewegen.
+In den ersten Diagrammen wird der Average Reward pro Evaluation dargestellt. Es ist ersichtlich, dass der Agent immer
+einen Reward von mindestens 4 und maximal 13 erreichen kann.
+![eval_reward.png](img%2Fdqn%2Feval_reward.png)
+Jedoch scheint es so, dass das Modell einen Reward von 13 nicht halten kann, da der Reward immer wieder auf 4 zurück was
+ein Zeichen dafür sein könnte, dass der Agent noch nicht verstanden hat, wie man den anderen Fahrzeugen optimal
+ausweichen kann.
+In den nächsten Diagrammen wird die durchschnittliche Länge der Episode pro Evaluation dargestellt. Es ist ersichtlich,
+dass der Agent immer eine Episode Länge von mindestens 6 und maximal 13 erreichen kann.
+![eval_mean_length.png](img%2Fdqn%2Feval_mean_length.png)
 
-### Trainingsstufe 1 (4000 - Zeitschritte)
+Das ist ein sehr kurzes Ergebnis, da der Agent immer noch sehr schnell crashed. Es ist jedoch ersichtlich, wenn man sich
+eine der Umgebungen mal als Video betrachtet, so ist jedoch erkennbar, dass der Agent sich über das Training hinweg
+immer länger in der Umgebung halten kann, jedoch nicht lange genug, um die Episode zu beenden.
 
-![dqn_4000.gif](videos%2Freadme%2Fdqn_4000.gif)
+### PPO
 
-Nach einiger Zeit des Trainings ist der Agent in der Lage, sich sicherer auf der Autobahn zu bewegen. Er wechselt die
-Spur und hält sich primär auf der rechten Spur auf um möglichst viele Punkte zu erhalten. Jedoch besteht in dieser
-Trainingsstufe noch Verbesserungsbedarf. Der Agent ist noch nicht in der Lage, sein Tempo zu ändern um im Falle, dass
-ein Fahrzeug vor ihm fährt, zu bremsen. Dieses Verhalten ist auf die zufällige Wahl der Aktionen zurückzuführen, da der
-Agent noch nicht in der Lage ist, die Situation zu erkennen und entsprechend zu handeln.
+In den nachfolgenden Diagrammen werden die Ergebnisse des PPO Agenten dargestellt. Grundlegend ist zu sagen, dass der
+PPO-Agent besser abschneidet als der DQN-Agent. So liegt bereits beim ersten Training der Average Reward über 14, was
+das maximum von den DQN-Agenten entspricht und nahm im Laufe des Trainings immer weiter zu, bis es dann sich bei ca. 27
+eingependelt hat.
+![train_reward.png](img%2Fppo%2Ftrain_reward.png)
 
-### Trainingsstufe 2 (32000 - Zeitschritte)
+Mit Blick auf den Average Reward pro Evaluation ist zu erkennen, ebenfalls besser abschneidet als das DQN, jedoch ist
+besonders auffällig, dass der Agent zwischen 24.000 und 26.000 Schritten einen Einbruch hat, was darauf hindeutet, dass
+der Agent in diesem Bereich schlechter geworden ist. Jedoch hat sich der Agent wieder gefangen und konnte sich wieder
+verbessern.
+![eval_reward.png](img%2Fppo%2Feval_reward.png)
 
-Das Training des Agenten wurde nach 32000 Zeitschritten abgebrochen, da der Agent in der Lage war, einer Vielzahl von
-Autos auf seinen Weg über die Autobahn auszuweichen.
-![dqn_32000.gif](videos%2Freadme%2Fdqn_32000.gif)
+In Hinblick auf die durchschnittliche Länge der Episode pro Evaluation ist zu erkennen, dass der Agent sich im Laufe des
+sich anders als der DQN, welcher bei 6 bis 13 lag, sich der PPO-Agent zwischen 20 und 30 Sekunden halten kann. Zudem
+nahm die Episodenlänge im laufenden Training zu, was ich als ein Indiez dafür sehe, dass der Agent sich verbessert hat.
+Und es sich vermutlich lohnen sollte, das Training noch weiter zu führen.
 
-Zudem hat der Agent gelernt, sein Tempo zu ändern um im Falle, dass ein Fahrzeug vor ihm fährt, zu bremsen. Er würde in
-den Fall einen gewissen Abstand hinter den vorherigen Auto halten um so möglichst viele Punkte zu erhalten. Dieses
-Szenario ist in dem Video jedoch nicht zu sehen, da der Agent in diesem Fall zu spät bremst und somit nicht in der Lage
-ist rechtzeitig zu stehen.
-
+![train_length.png](img%2Fppo%2Ftrain_length.png)
 ---
 
 ## Diskussion der Ergebnisse und Ausblick auf mögliche Verbesserungen
